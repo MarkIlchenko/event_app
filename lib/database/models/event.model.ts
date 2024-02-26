@@ -1,4 +1,4 @@
-import { Schema, model, models, Document } from "mongoose";
+import { Document, Schema, model, models } from "mongoose";
 
 export interface IEvent extends Document {
   _id: string;
@@ -22,8 +22,8 @@ const EventSchema = new Schema({
   location: { type: String },
   createdAt: { type: Date, default: Date.now },
   imageUrl: { type: String, required: true },
-  startDateTime: { type: Date, required: Date.now },
-  endDateTime: { type: Date, required: Date.now },
+  startDateTime: { type: Date, default: Date.now },
+  endDateTime: { type: Date, default: Date.now },
   price: { type: String },
   isFree: { type: Boolean, default: false },
   url: { type: String },
